@@ -55,5 +55,9 @@ namespace NodeIrSdk {
   }
 
   // name of native addon
+  #if NODE_MAJOR_VERSION >= 10
+  NAN_MODULE_WORKER_ENABLED(keytar, Init)
+  #else
   NODE_MODULE(IrSdkNodeBindings, init)
+  #endif
 }
