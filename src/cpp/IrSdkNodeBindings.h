@@ -36,7 +36,6 @@ namespace NodeIrSdk {
   {
     irsdk.startup();
 
-    node::AtExit(nullptr, nullptr, cleanUp);
     #if NODE_MAJOR_VERSION >= 12
       node::Environment* env = node::GetCurrentEnvironment(Nan::GetCurrentContext());
       node::AtExit(env, cleanUp, NULL);
